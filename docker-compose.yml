@@ -1,0 +1,16 @@
+
+services:
+  db:
+    image: postgres:16
+    container_name: cs2-guide-db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: cs2_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
